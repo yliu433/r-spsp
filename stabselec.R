@@ -1,12 +1,11 @@
 
+# These functions are based on 
+# http://members.cbio.mines-paristech.fr/~jvert/svn/tutorials/practical/reginference/stabilityselection.R
 
 # stability for lasso =========
 
 stab_lasso <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
 {
-  # Stability selection in the spirit of Meinshausen&Buhlman
-  # JP Vert, 14/9/2010
-  
   # x is the n*p design matrix, y the n*1 variable to predict
   require(glmnet)
   dimx <- dim(x)
@@ -76,9 +75,6 @@ stab_lasso <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
 
 stab_adalasso <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
 {
-  # Stability selection in the spirit of Meinshausen&Buhlman
-  # JP Vert, 14/9/2010
-  
   # x is the n*p design matrix, y the n*1 variable to predict
   require(glmnet)
   dimx <- dim(x)
@@ -161,8 +157,6 @@ stab_adalasso <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
 
 stab_scad <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
 {
-  # Stability selection in the spirit of Meinshausen&Buhlman
-  # JP Vert, 14/9/2010
   
   # x is the n*p design matrix, y the n*1 variable to predict
   require(ncvreg)
@@ -231,10 +225,7 @@ stab_scad <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
 # stability for mcp =========
 
 stab_mcp <- function(x,y,nbootstrap=100,K=100,plotme=FALSE,thres=0.9)
-{
-  # Stability selection in the spirit of Meinshausen&Buhlman
-  # JP Vert, 14/9/2010
-  
+{  
   # x is the n*p design matrix, y the n*1 variable to predict
   require(ncvreg)
   dimx <- dim(x)
